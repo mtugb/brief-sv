@@ -13,12 +13,13 @@ A QR code will appear in your terminal. Scan it from any device on the same Wi-F
 
 `.md` files are automatically rendered as HTML.
 
+Default port is `7878`. You can change it with `-p` option, but make sure the port is open in your firewall.
 ## WSL/WSL2 Users
 Extra setup is required:
 ### Step 1
 Run `setup-firewall.bat` as Admin in windows side.
 The file can be found in my repo.
-Or you can also pastes the code bellow in cmd (admin mode).
+Or you can also pastes the code below in cmd (admin mode).
 ```setup-firewall.bat
 @echo off
 netsh advfirewall firewall delete rule name="brief-sv" >nul 2>&1
