@@ -49,7 +49,7 @@ fn main() -> Result<()> {
         let parser = pulldown_cmark::Parser::new_ext(&file_str, Options::all());
         let mut html_stack = String::new();
         html_stack
-            .push_str("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+            .push_str("<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
         push_html(&mut html_stack, parser);
         html_stack
     } else {
@@ -82,7 +82,7 @@ fn main() -> Result<()> {
     let listener = std::net::TcpListener::bind(format!("0.0.0.0:{}", port))?;
     for stream in listener.incoming() {
         let res_str = format!(
-            "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nContent-Length: {len}\r\n\r\n{body}",
+            "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\nContent-Length: {len}\r\n\r\n{body}",
             len = html.len(), // String.len() returns byte length of the content
             body = html
         );
