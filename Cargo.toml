@@ -2,6 +2,9 @@
 name = "brief-sv"
 version = "0.1.0"
 edition = "2024"
+description = "A minimal CLI tool that hosts a single file in your local network"
+license = "MIT"
+repository = "https://github.com/mtugb/brief-sv"
 
 [dependencies]
 anyhow = "1.0.102"
